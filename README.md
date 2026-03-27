@@ -8,7 +8,7 @@ This case study demonstrates defense-oriented security approaches for Kubernetes
 
 **Philosophy**: The vulnerability EXISTS. The code is BROKEN. We don't fix it. But through infrastructure hardening, we significantly reduce the blast radius.
 
-## What You'll Learn
+## What we can Learn
 
 - Kubernetes security fundamentals
 - Real-world attack patterns and mitigation strategies
