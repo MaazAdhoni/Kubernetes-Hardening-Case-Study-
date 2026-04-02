@@ -7,12 +7,15 @@ spec:
   rules:
   - name: check-run-as-non-root
     match:
-      any:
-      - resources:
-          kinds:
-          - Pod
-          namespaces:
-          - default
+      resources:
+        kinds:
+        - Pod
+    exclude:
+      resources:
+        namespaces:
+        - kube-system
+        - kube-public
+        - kube-node-lease
     validate:
       message: "Containers must run as non-root"
       pattern:

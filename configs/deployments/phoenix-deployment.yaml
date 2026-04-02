@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phoenix
+  labels:
+    app: phoenix
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: phoenix
+  template:
+    metadata:
+      labels:
+        app: phoenix
+    spec:
+      containers:
+      - name: phoenix
+        image: phoenix:v1
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: IfNotPresent
+        securityContext:
+          runAsUser: 0
+          allowPrivilegeEscalation: true
